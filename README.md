@@ -5,7 +5,7 @@ API Wrapper for discordservices.net
 ```js
 const ds = require('discordservices.net');
 ds.login('134nnf9u0313j0im')
- //token
+//token
 
 //Updating stats
 ds.updateStats(id, guildSize, shardCount)
