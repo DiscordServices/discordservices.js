@@ -43,38 +43,5 @@ req.end()
 }
 
 exports.updateNews = function(id, title, desc) {
-  
+ /* wip */ 
 }
-
-/*
-const data = JSON.stringify({
-  servers: 60
-})
-
-const options = {
-  hostname: 'api.discordservices.net',
-  port: 443,
-  path: '/bot/698681848431378472/stats',
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-    'Content-Length': data.length,
-    'Authorization': process.env.TOKEN
-  }
-}
-
-const req = https.request(options, res => {
-  console.log(`statusCode: ${res.statusCode}`)
-
-  res.on('data', d => {
-    process.stdout.write(d)
-  })
-})
-
-req.on('error', error => {
-  console.error(error)
-})
-
-req.write(data)
-req.end()*/
-
