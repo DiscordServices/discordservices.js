@@ -4,8 +4,8 @@ API Wrapper for discordservices.net
 ### Setup / Examples
 ```js
 const ds = require('discordservices.net');
-ds.login('134nnf9u0313j0im')
-//token
+ds.login(token)
+//found on api page
 
 //Updating stats
 ds.updateStats(id, guildSize, shardCount)
