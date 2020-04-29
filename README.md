@@ -3,7 +3,7 @@ API Wrapper for discordservices.net
 
 ### Setup / Examples
 ```js
-const ds = require('discordservices.net');
+const ds = require('discordservices.js');
 ds.login(token)
 //found on api page
 
