@@ -1,5 +1,5 @@
 # discordservices.js
-API Wrapper for discordservices.net
+API Wrapper for discordservices.net bot listing site.
 
 ## Setup / Examples
 **Logging In**
