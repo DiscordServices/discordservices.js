@@ -36,7 +36,7 @@ const commands = [
     category: 'Utility'
   },
   {
-    command '/help',
+    command: '/help',
     desc: 'This does a help command',
     category: 'General'
   }
