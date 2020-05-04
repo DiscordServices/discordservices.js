@@ -1,5 +1,5 @@
 # discordservices.js
-API Wrapper for discordservices.net
+API Wrapper for discordservices.net site
 
 ## Setup / Examples
 **Logging In**
