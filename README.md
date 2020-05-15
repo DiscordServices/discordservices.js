@@ -1,5 +1,5 @@
 # discordservices.js
-API Wrapper for discordservices.net site
+API Wrapper for discordservices.net
 
 ## Setup / Examples
 **Logging In**
@@ -44,7 +44,7 @@ const commands = [
 
 ds.updateCommands(id, commandsObject)
 
-ds.update('4692050505699136969', commands)
+ds.updateCommands('4692050505699136969', commands)
 //resets current commands and updates commands to commandsArray
 ```
 Just like with `updateStats()`, each API request overlaps/resets the previous, meaning it sets the commands to the ones specified in the recent request, it doesn't add onto it.
