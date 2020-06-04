@@ -4,26 +4,26 @@ API Wrapper for discordservices.net
 ## Setup / Examples
 **Logging In**
 ```js
-const ds = require('discordservices.js');
-ds.login(token)
-//found on api page
+const DS = require('discordservices.js');
+let ds = new DS.Client()
+ds.login(token, id)
 ```
 **Updating Stats**
 ```js
-ds.updateStats(id, guildSize, shardCount)
+ds.updateStats(guildSize, shardCount)
 
-ds.updateStats('4692050505699136969', 200)
+ds.updateStats(200)
 //updates servers to 200 and shards to 0
-ds.updateStats('4692050505699136969', 2069, 3)
+ds.updateStats(2069, 3)
 //updates servers to 2069 and shards to 3
 ```
 Each API request updates **both** shards and guilds, so if you only want to update guilds, but still want to keep shards, you have to specify both, or it will be set to zero.
 
 **Posting News**
 ```js
-ds.postNews(id, title, content)
+ds.postNews(title, content)
 
-ds.postNews('4692050505699136969', 'News!', 'This is important news')
+ds.postNews('News!', 'This is important news')
 //posts news title to 'News!' and content to 'This is important news'
 ```
 
@@ -42,9 +42,9 @@ const commands = [
   }
 ]
 
-ds.updateCommands(id, commandsObject)
+ds.updateCommands(commandsObject)
 
-ds.updateCommands('4692050505699136969', commands)
+ds.updateCommands(commands)
 //resets current commands and updates commands to commandsArray
 ```
 Just like with `updateStats()`, each API request overlaps/resets the previous, meaning it sets the commands to the ones specified in the recent request, it doesn't add onto it.
