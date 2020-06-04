@@ -1,5 +1,5 @@
 # discordservices.js
-API Wrapper for discordservices.net
+API Wrapper for discordservices.net [https://www.npmjs.com/package/discordservices.js](https://www.npmjs.com/package/discordservices.js "NPM Page")
 
 ## Setup / Examples
 **Logging In**
