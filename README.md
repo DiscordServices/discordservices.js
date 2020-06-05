@@ -1,52 +1,50 @@
 # discordservices.js
-API Wrapper for discordservices.net [https://www.npmjs.com/package/discordservices.js](https://www.npmjs.com/package/discordservices.js "NPM Page")
+API Wrapper for discordservices.net
 
-## Setup / Examples
+## Methods
 **Logging In**
 ```js
 const DS = require('discordservices.js');
-let ds = new DS.Client()
-ds.login(token, id)
+let ds = new DS(id, token)
 ```
 **Updating Stats**
 ```js
 ds.updateStats(guildSize, shardCount)
 
-ds.updateStats(200)
-//updates servers to 200 and shards to 0
-ds.updateStats(2069, 3)
-//updates servers to 2069 and shards to 3
 ```
-Each API request updates **both** shards and guilds, so if you only want to update guilds, but still want to keep shards, you have to specify both, or it will be set to zero.
 
 **Posting News**
 ```js
-ds.postNews(title, content)
-
-ds.postNews('News!', 'This is important news')
-//posts news title to 'News!' and content to 'This is important news'
+ds.updateNews(title, content)
 ```
 
-**Updating Commands**
+**Updating Commands †**
 ```js
-const commands = [
-  {
-    command: '/say',
-    desc: 'This does a say command',
-    category: 'Utility'
-  },
-  {
-    command: '/help',
-    desc: 'This does a help command',
-    category: 'General'
-  }
-]
-
-ds.updateCommands(commandsObject)
-
 ds.updateCommands(commands)
-//resets current commands and updates commands to commandsArray
 ```
-Just like with `updateStats()`, each API request overlaps/resets the previous, meaning it sets the commands to the ones specified in the recent request, it doesn't add onto it.
+
+## Events
+**Stats Update**
+```js
+ds.on('updateStats', (error) => {
+  // ...
+})
+```
+
+**News Update**
+```js
+ds.on('updateNews', (error) => {
+  // ...
+})
+```
+
+**Commands Update**
+```js
+ds.on('updateCommands', (error) => {
+  // ...
+})
+```
 
 If you have any **questions** regarding use of this library, feel free to contact the developer.
+
+###### † The structure of the commands object can be found on the API page [here](https://discordservices.net/docs/api)
