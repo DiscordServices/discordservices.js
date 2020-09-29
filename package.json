@@ -1,5 +1,5 @@
 {
-  "name": "discordservices.jstest",
+  "name": "discordservices.js",
   "version": "2.5.1",
   "description": "ES6 Promise based API Wrapper for discordservices.net",
   "type": "commonjs",
