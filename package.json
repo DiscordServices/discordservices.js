@@ -1,0 +1,36 @@
+{
+  "name": "discordservices.jstest",
+  "version": "2.5.1",
+  "description": "ES6 Promise based API Wrapper for discordservices.net",
+  "type": "commonjs",
+  "main": "./dist/src/Client.js",
+  "exports": {
+    ".": {
+      "require": "./dist/src/Client.js",
+      "default": "./src/Client.mjs"
+    }
+  },
+  "module": "./src/Client.mjs",
+  "scripts": {
+    "build": "build-esm"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DiscordServices/discordservices.js.git"
+  },
+  "author": "willuhm",
+  "contributors": [
+    "MrZillaGold"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DiscordServices/discordservices.js/issues"
+  },
+  "homepage": "https://github.com/DiscordServices/discordservices.js#readme",
+  "dependencies": {
+    "axios": "^0.20.0"
+  },
+  "devDependencies": {
+    "build-esm": "^4.2.2"
+  }
+}
