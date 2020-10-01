@@ -111,6 +111,6 @@ ds.on("error", (error) => {
 ```
 </details>
 
-If you have any **questions** regarding use of this library, feel free to contact the developer.
+If you have any **questions** regarding use of this library, feel free to contact the developer(s).
 
 ###### † The structure of the commands object can be found on the API page [here](https://discordservices.net/docs/api)
