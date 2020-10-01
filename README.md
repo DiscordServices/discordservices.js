@@ -1,49 +1,115 @@
-# discordservices.js
-API Wrapper for discordservices.net
+<p align="center"><b>discordservices.js</b></p>
+<p align="center">ES6 Promise based API Wrapper for discordservices.net</p>
 
 ## Methods
 **Logging In**
-```js
-const DS = require('discordservices.js');
-let ds = new DS(id, token)
-```
-**Updating Stats**
-```js
-ds.updateStats(guildSize, shardCount)
+<details>
+    <summary>Params</summary>
 
+| Param         | Type     | Default | Description            |
+| ------------- | -------- | ------- | ---------------------- |
+| options       | `Object` |         | Options for client     |
+| options.id    | `string` | `""`    | Discord bot id         |
+| options.token | `string` | `""`    |  DiscordServices token |
+</details>
+<details>
+    <summary>Example</summary>
+
+```js
+import { Client } from "discordservices.js"; // ES6
+// or
+const { Client } = require("discordservices.js"); // ES5
+
+const ds = new Client({
+    id,
+    token
+});
 ```
+</details>
+
+**Updating Stats**
+<details>
+    <summary>Params</summary>
+
+| Param         | Type     | Description                   |
+| ------------- | -------- | ----------------------------- |
+| stats         | `Object` | Stats for update              |
+| stats.servers | `number` | The number of servers the bot |
+| stats.shards  | `number` | The number of shards the bot  |
+</details>
+<details>
+    <summary>Example</summary>
+    
+```js
+ds.updateStats({
+    servers,
+    shards
+}); // => Promise
+```
+</details>
 
 **Posting News**
+<details>
+    <summary>Params</summary>
+
+| Param        | Type      | Default | Description   |
+| ------------ | --------- | ------- | ------------- |
+| news         | `Object`  |         | News for post |
+| news.title   | `string`  | `""`    | News title    |
+| news.content | `string`  | `""`    | News content  |
+| news.error   | `boolean` | `false` | Is error news |
+</details>
+<details>
+    <summary>Example</summary>
+
 ```js
-ds.updateNews(title, content)
+ds.postNews({
+    title,
+    content
+}); // => Promise
 ```
+</details>
 
 **Updating Commands †**
+<details>
+    <summary>Params</summary>
+
+| Param             | Type       | Description          |
+| ----------------- | ---------- | -------------------- |
+| commands          | `Object[]` |  Commands for update |
+| commands.command  | `string`   | Command name         |
+| commands.desc     | `string`   | Command description  |
+| commands.category | `string`   | Command category     |
+</details>
+<details>
+    <summary>Example</summary>
+    
 ```js
-ds.updateCommands(commands)
+ds.updateCommands(commands);  // => Promise
 ```
+</details>
 
 ## Events
-**Stats Update**
+<details>
+    <summary>Events</summary>
+    
+| Name             | Description     |
+| ---------------- | --------------- |
+| `updateStats`    | Stats Update    |
+| `postNews`       | News Update     |
+| `updateCommands` | Commands Update |
+| `updateCommands` | Commands Update |
+| `requestError`   | Request error   |
+</details>
+<details>
+    <summary>Example</summary>
+    
 ```js
-ds.on('updateStats', (error) => {
+ds.on("error", (error) => {
   // ...
-})
+});
 ```
-
-**News Update**
-```js
-ds.on('updateNews', (error) => {
-  // ...
-})
-```
-
-**Commands Update**
-```js
-ds.on('updateCommands', (error) => {
-  // ...
-})
-```
+</details>
 
 If you have any **questions** regarding use of this library, feel free to contact the developer.
 
