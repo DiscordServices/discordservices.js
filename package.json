@@ -3,16 +3,16 @@
   "version": "2.5.1",
   "description": "ES6 Promise based API Wrapper for discordservices.net",
   "type": "commonjs",
-  "main": "./dist/src/Client.js",
+  "main": "./dist/Client.js",
   "exports": {
     ".": {
-      "require": "./dist/src/Client.js",
+      "require": "./dist/Client.js",
       "default": "./src/Client.mjs"
     }
   },
   "module": "./src/Client.mjs",
   "scripts": {
-    "build": "build-esm"
+    "build": "babel src --out-dir dist"
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,10 @@
     "axios": "^0.20.0"
   },
   "devDependencies": {
-    "build-esm": "^4.2.2"
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.12.1",
+    "@babel/plugin-transform-modules-commonjs": "^7.12.1",
+    "@babel/preset-env": "^7.12.1"
   }
 }
