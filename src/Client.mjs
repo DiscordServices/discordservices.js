@@ -15,7 +15,12 @@ export class Client extends EventEmitter {
 
     this.id = id;
 
-    axios.defaults.headers.authorization = token;
+    this.client = axios.create({
+        baseURL: API_ENDPOINT,
+        headers: {
+            authorization: token
+        }
+    });
   }
 
   /**
@@ -27,7 +32,7 @@ export class Client extends EventEmitter {
    */
   updateStats({ servers = 0, shards = 0 }) {
     return new Promise(((resolve, reject) => {
-      axios.post(`${API_ENDPOINT}/bot/${this.id}/stats`, { shards, servers })
+        this.client.post(`/bot/${this.id}/stats`, { shards, servers })
           .then(({ data }) => {
             console.log(data);
 
@@ -57,7 +62,7 @@ export class Client extends EventEmitter {
      */
   postNews({ title = "", content = "", error = false }) {
       return new Promise((resolve, reject) => {
-          axios.post(`${API_ENDPOINT}/bot/${this.id}/news`, { title, content, error })
+          this.client.post(`/bot/${this.id}/news`, { title, content, error })
               .then(({ data }) => {
                   this.emit("postNews");
 
@@ -85,7 +90,7 @@ export class Client extends EventEmitter {
      */
   updateCommands(commands = []) {
       return new Promise((resolve, reject) => {
-          axios.post(`${API_ENDPOINT}/bot/${this.id}/commands`, commands)
+          this.client.post(`/bot/${this.id}/commands`, commands)
               .then(({ data }) => {
                   this.emit("updateCommands");
 
