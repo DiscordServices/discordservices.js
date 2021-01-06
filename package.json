@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/DiscordServices/discordservices.js#readme",
   "dependencies": {
-    "axios": "^0.20.0"
+    "axios": "^0.21.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.1",
